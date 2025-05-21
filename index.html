@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Construction Projects</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD21ghqSOmNfqMDkqNk2BBgyTAJ9hQ50gE&libraries=marker"
+        async defer>
+        </script>
+</head>
+
+<body>
+    <h1>Construction Company .Ltd</h1>
+    <nav id="navbar">
+        <label for="projectSelect">Select a project: </label>
+        <select id="projectSelect">
+            <option value="">-- Choose a project --</option>
+        </select>
+    </nav>
+    <div id="layout">
+        <div id="googleMap"></div>
+        <aside id="project-sidebar">
+            <h2>Project Info</h2>
+            <div id="address-info"></div>
+            <div id="tool-info"></div>
+            <div id="recommendations"></div>
+        </aside>
+    </div>
+    <!-- Forecast output -->
+    <div id="forecast-section">
+        <h2>8-Day Forecast</h2>
+        <div id="forecast-grid"></div>
+    </div>
+    <div id="weather-sections">
+        <!-- History controls -->
+        <div id="history-controls">
+            <h3>View Historical Weather</h3>
+            <input type="date" id="history-date" max="" />
+            <button id="load-history">Load Historical Data</button>
+        </div>
+        <!-- Historical weather output -->
+        <div id="historical-section">
+            <h2>Historical Weather</h2>
+            <div id="historical-tile"></div>
+        </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

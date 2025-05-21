@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+}
+
+#layout {
+    display: flex;
+    height: 100vh;
+}
+
+#googleMap {
+    flex: 3;
+    height: 100%;
+}
+
+#project-sidebar {
+    flex: 1;
+    padding: 1rem;
+    background: #f4f4f4;
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+#project-sidebar h2 {
+    margin-top: 0;
+}
+
+#tool-info,
+#recommendations {
+    margin-top: 1rem;
+}
+
+#recommendations ul {
+    padding-left: 1rem;
+}
+
+#recommendations li {
+    margin-bottom: 0.5rem;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #222;
+    color: white;
+    padding: 1rem;
+}
+
+#navbar select {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+#forecast-section {
+    padding: 1rem;
+    background: #eef;
+    border-top: 2px solid #ccc;
+}
+
+#forecast-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: center;
+}
+
+.forecast-day {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 1%;
+    width: 110px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#weather-sections {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    /* Allows responsive stacking on small screens */
+}
+
+#historical-tile {
+    
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+    width: fit-content;
+}
+
+.historical-day {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#history-controls {
+    
+    padding: 1rem;
+    background: #eef1f4;
+    border: 1px solid #ccc;
+    width: fit-content;
+}
+
+#history-controls input,
+#history-controls button {
+    margin-top: 0.5rem;
+    display: block;
+}
