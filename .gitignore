@@ -15,3 +15,15 @@ yarn-error.log*
 *.log
 .vscode/
 .idea/
+
+# Sensitive / local env
+.env
+**/.env
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Optional system/IDE files
+.vscode/
+*.log
