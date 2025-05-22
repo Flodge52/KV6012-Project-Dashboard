@@ -11,13 +11,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const __dirname = path.resolve()
-
-// Static files
-app.use('/js', express.static(path.join(__dirname, 'js')))
-app.use('/styles', express.static(path.join(__dirname, 'styles')))
+app.use('/js', express.static(path.join(__dirname, '../js')))
+app.use('/styles', express.static(path.join(__dirname, '../styles')))
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'))
+  res.sendFile(path.join(__dirname, '../index.html'))
 })
 
 // API routes
