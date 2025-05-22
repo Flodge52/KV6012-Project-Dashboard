@@ -5,7 +5,9 @@ dotenv.config()
 console.log("AZURE_SQL_CONNECTION_STRING:", process.env.SQLCONNSTR_AZURE_SQL_CONNECTION_STRING)
 
 // ✅ Use Azure connection string if in production
-const azureConnectionString = process.env.SQLCONNSTR_AZURE_SQL_CONNECTION_STRING
+const azureConnectionString =
+  process.env.SQLCONNSTR_SQLCONNSTR_AZURE_SQL_CONNECTION_STRING || // Fixes Azure weirdness
+  process.env.SQLCONNSTR_AZURE_SQL_CONNECTION_STRING
 
 const config = azureConnectionString
   ? {
