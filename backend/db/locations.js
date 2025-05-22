@@ -1,6 +1,6 @@
-import { getPool } from './connect.js'
+const { getPool } = require('./connect.js')
 
-export async function fetchAllLocations() {
+async function fetchAllLocations() {
     const pool = await getPool()
     const result = await pool.request().query(`
     SELECT id, name, latitude, longitude, Location AS location FROM ProjectLocations
@@ -8,7 +8,7 @@ export async function fetchAllLocations() {
     return result.recordset
 }
 
-export async function getResourcesForProject(projectId) {
+async function getResourcesForProject(projectId) {
     const pool = await getPool()
     const result = await pool.request()
         .input('projectId', projectId)
@@ -21,3 +21,5 @@ export async function getResourcesForProject(projectId) {
 
     return result.recordset
 }
+
+module.exports = {fetchAllLocations, getResourcesForProject}

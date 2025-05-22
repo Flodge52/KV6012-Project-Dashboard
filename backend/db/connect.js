@@ -1,5 +1,5 @@
-import sql from 'mssql'
-import dotenv from 'dotenv'
+const sql = require('mssql')
+const dotenv = require('dotenv')
 dotenv.config()
 
 // ✅ Use Azure connection string if in production
@@ -26,7 +26,10 @@ const config = azureConnectionString
     }
 
 let pool
-export async function getPool() {
+
+async function getPool() {
   if (!pool) pool = await sql.connect(config)
   return pool
 }
+
+module.exports = { getPool }
