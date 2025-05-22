@@ -6,10 +6,12 @@ console.log("AZURE_SQL_CONNECTION_STRING:", process.env.SQLCONNSTR_AZURE_SQL_CON
 console.log("🧪 Available ENV Vars:", Object.keys(process.env).filter(k => k.includes("SQL")))
 console.log("🧪 AZURE_SQL_CONNECTION_STRING:", process.env.SQLCONNSTR_SQLCONNSTR_AZURE_SQL_CONNECTION_STRING)
 
-// ✅ Use Azure connection string if in production
 const azureConnectionString =
-  process.env.SQLCONNSTR_SQLCONNSTR_AZURE_SQL_CONNECTION_STRING || // Fixes Azure weirdness
-  process.env.SQLCONNSTR_AZURE_SQL_CONNECTION_STRING
+  process.env.SQLCONNSTR_SQLCONNSTR_AZURE_SQL_CONNECTION_STRING ||
+  process.env.SQLCONNSTR_AZURE_SQL_CONNECTION_STRING ||
+  process.env.AZURE_SQL_CONNECTION_STRING
+
+console.log("🧪 Using connection string:", azureConnectionString)
 
 const config = azureConnectionString
   ? {
@@ -30,6 +32,8 @@ const config = azureConnectionString
         trustServerCertificate: false
       }
     }
+
+console.log("🧪 Final config sent to mssql:", config)
 
 let pool
 
